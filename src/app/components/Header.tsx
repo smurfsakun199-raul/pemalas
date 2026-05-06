@@ -48,7 +48,8 @@ const listItemLinksBacot = [
 ];
 
 export default function Header() {
-    const [isLight, setIsLight] = useState('dark');
+    const pathName = usePathname();
+    const [isLight, setIsLight] = useState<string | null>(null);
 
     useEffect(() => {
         const simpanToggle = localStorage.getItem('theme') || 'dark';
@@ -56,15 +57,18 @@ export default function Header() {
     }, []);
 
     useEffect(() => {
-        document.body.classList.toggle('light', isLight === 'light');
+        if (!isLight) return;
+
+        if (isLight === 'light') {
+            document.body.classList.add('light');
+        } else {
+            document.body.classList.remove('light');
+        }
+
         localStorage.setItem('theme', isLight);
     }, [isLight]);
 
-    const toggleTheme = () => {
-        setIsLight(prev => prev === 'dark' ? 'light' : 'dark');
-    }
-
-    const pathName = usePathname();
+    if (isLight === null) return null;
 
     return (
         <header>
@@ -90,11 +94,11 @@ export default function Header() {
                         })}
                     </div>
                     <div>
-                        <button onClick={toggleTheme} className="icn-svg-theme bg-blur-card flex align-itm-fe bg-white outline-op br-radius-12px gap-4px">
+                        <button onClick={() => setIsLight(prev => (prev === 'dark' ? 'light' : 'dark'))} className="icn-svg-theme bg-blur-card flex align-itm-fe bg-white outline-op br-radius-12px gap-4px">
                             {isLight === 'light' ? (
-                                <><Sun /> Light</>
+                                <><Sun /> </>
                             ) : (
-                                <><Moon /> Darkz</>
+                                <><Moon /> </>
                             )}
                         </button>
                     </div>
