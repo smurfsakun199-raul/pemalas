@@ -54,6 +54,7 @@
   box-sizing: border-box;
 }
 
+/*
 ::-webkit-scrollbar {
   width: 12px;
   height: 12px;
@@ -71,7 +72,7 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: transparent;
-}
+}*/
 
 html {
   width: 100%;
@@ -157,18 +158,6 @@ body.light {
     border: none;
     padding-block: 6px;
     padding-inline: 8px;
-    /*
-    background: var(--clr);
-    color: var(--bg);*/
-  }
-
-  img {
-    object-fit: contain;
-    border: 1px solid var(--br-op);
-    border-radius: 12px;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
   }
 
   /* --- Effect-Glow --- */

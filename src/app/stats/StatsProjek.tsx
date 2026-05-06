@@ -161,7 +161,7 @@ export default function Stats() {
                 </div>
             </section>
             <section ref={(el) => { divRefs.current['lol'] = el; }} aria-labelledby="statistik-bacot" className="sec-visible-auto pos-rel sec-visible-auto pad-bl-20px pad-top-48px pad-0-14px">
-                <div className="reveal pad-top-10px">
+                <div className="pad-top-10px">
                     <div className="flex jus-c-c align-itm-c pad-btm-40px">
                         <h2 id="statistik-bacot" className="font-size-16px flex jus-c-c align-itm-c gap-10px"><Layers3 />Statistik</h2>
                     </div>
@@ -192,38 +192,36 @@ export default function Stats() {
                         ))}
                     </div>
                 </div>
-                <div className="reveal">
-                    <div ref={(el) => { divRefs.current['lol'] = el; }} className="flex pos-rel flex-direc-clm jus-c-c align-itm-inherit gap-24px">
-                        <div className="glow-w300-h100px tolol-blue-old-top-l-10-10ps"></div>
-                        <div className="glow-w300-h100px tolol-blue-old-btm-r-10-10ps"></div>
-                        {isList.map((itm) => {
-                            const IconComponent = itm.icn;
-                            return (
-                                <div
-                                    key={itm.id}
-                                    className={`flex flex-direc-clm pad-10px ${classAlignList(itm.id)}`}>
-                                    <div className={`${classHorizEffectList(itm.id)}`}></div>
-                                    <h3 className="flex jus-c-c align-itm-c gap-10px pad-top-20px pad-btm-20px"><IconComponent /> {itm.name}</h3>
-                                    <div className={`flex-mx-764px-dir-clm width-100ps ${itm.id === 3 ? 'jus-c-c' : 'jus-c-sb'} pad-btm-40px ${classAlignList(itm.id)} ${classFlexDirecList(itm.id)} gap-48px`}>
-                                        <div className="flex jus-c-c align-itm-fs gap-24px">
-                                            <div className={`${classHoverAfterList(itm.id)} pad-10px br-radius-50ps ${classSkorList(itm.id)}`}>
-                                                <strong className="font-size-20px flex jus-c-c align-itm-c br-radius-50ps width-82px height-82px pad-10px bg-dark txt-align-c">{itm.skor}</strong>
-                                            </div>
-                                            <div className="flex flex-direc-clm gap-20px">
-                                                <h4>{itm.mar_1}</h4>
-                                                <h4>{itm.mar_2}</h4>
-                                                <h4>{itm.mar_3}</h4>
-                                            </div>
+                <div ref={(el) => { divRefs.current['lol'] = el; }} className="flex pos-rel flex-direc-clm jus-c-c align-itm-inherit gap-24px">
+                    <div className="glow-w300-h100px tolol-blue-old-top-l-10-10ps"></div>
+                    <div className="glow-w300-h100px tolol-blue-old-btm-r-10-10ps"></div>
+                    {isList.map((itm) => {
+                        const IconComponent = itm.icn;
+                        return (
+                            <div
+                                key={itm.id}
+                                className={`flex flex-direc-clm pad-10px ${classAlignList(itm.id)}`}>
+                                <div className={`${classHorizEffectList(itm.id)}`}></div>
+                                <h3 className="flex jus-c-c align-itm-c gap-10px pad-top-20px pad-btm-20px"><IconComponent /> {itm.name}</h3>
+                                <div className={`flex-mx-764px-dir-clm width-100ps ${itm.id === 3 ? 'jus-c-c' : 'jus-c-sb'} pad-btm-40px ${classAlignList(itm.id)} ${classFlexDirecList(itm.id)} gap-48px`}>
+                                    <div className="flex jus-c-c align-itm-fs gap-24px">
+                                        <div className={`${classHoverAfterList(itm.id)} pad-10px br-radius-50ps ${classSkorList(itm.id)}`}>
+                                            <strong className="font-size-20px flex jus-c-c align-itm-c br-radius-50ps width-82px height-82px pad-10px bg-dark txt-align-c">{itm.skor}</strong>
                                         </div>
-                                        <div className="card-hover max-w-400px bg-dark-to-light box-sdw-1-2-6px pad-btm-20px">
-                                            <p className="font-size-16px color-white-op">{itm.desc_primary}</p>
+                                        <div className="flex flex-direc-clm gap-20px">
+                                            <h4>{itm.mar_1}</h4>
+                                            <h4>{itm.mar_2}</h4>
+                                            <h4>{itm.mar_3}</h4>
                                         </div>
                                     </div>
-                                    <p className="font-size-14px color-p pad-10px box-sdw-0-2-6px">{itm.desc_secondary}</p>
+                                    <div className="card-hover max-w-400px bg-dark-to-light box-sdw-1-2-6px pad-btm-20px">
+                                        <p className="font-size-16px color-white-op">{itm.desc_primary}</p>
+                                    </div>
                                 </div>
-                            )
-                        })}
-                    </div>
+                                <p className="font-size-14px color-p pad-10px box-sdw-0-2-6px">{itm.desc_secondary}</p>
+                            </div>
+                        )
+                    })}
                 </div>
             </section>
         </main>

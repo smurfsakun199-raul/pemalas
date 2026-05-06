@@ -92,7 +92,7 @@ export default function Footer() {
             </div>
             <div className="flex jus-c-c align-itm-c">
                 <div className="pad-top-30px pad-btm-10px">
-                    <span id="footer-Lol" className="hover-after-effect color-p font-size-14px">Create by Author Tolol 2026</span>
+                    <span id="footer-Lol" className="hover-after-effect color-p font-size-14px">Create by Author Tolol 2026?</span>
                 </div>
             </div>
         </footer>

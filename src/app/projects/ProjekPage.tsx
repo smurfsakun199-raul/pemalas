@@ -68,7 +68,7 @@ export default function Projects() {
                     <h2 id="bacot-title" className="font-size-3-5rem txt-align-c pad-btm-20px">Project website <span className="glow-text">Tolol</span> juga <span className="glow-text">Lambat, Berat</span> nan <span className="glow-text">Buruk</span></h2>
                     <p className="txt-align-c">Buat projek anda lebih baik dengan tidak mengharapkan apapun harapan anda pada kami,karena akan membuat anda kecewa.</p>
                 </div>
-                <div className="reveal flex flex-direc-clm jus-c-c align-itm-inherit pad-top-48px pad-btm-20px gap-48px">
+                <div className="flex flex-direc-clm jus-c-c align-itm-inherit pad-top-48px pad-btm-20px gap-48px">
                     {listProjek.map((item) => (
                         <div key={item.id} className="pad-20-20px box-sdw-1-2-6px">
                             <div className="flex jus-c-sb align-itm-c pad-btm-20px">
