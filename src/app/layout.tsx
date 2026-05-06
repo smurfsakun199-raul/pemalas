@@ -4,6 +4,7 @@ import "./globals.css";
 
 import HeaderTolol from "@/app/components/Header";
 import FooterTolol from "@/app/components/Footer";
+import { config } from "@fortawesome/fontawesome-svg-core";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -36,6 +37,8 @@ export const metadata: Metadata = {
     type: 'website'
   },
 };
+
+config.autoAddCss = false;
 
 export default function RootLayout({
   children,
