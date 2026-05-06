@@ -59,9 +59,9 @@ body {
     "Noto Color Emoji";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+  /*text-rendering: optimizeLegibility;*/
   overflow-x: hidden;
-  transition: background 0.3s ease-in-out;
+  transition: background 0.15s linear;
 }
 
 body.light {
