@@ -4,7 +4,6 @@ import "./globals.css";
 
 import HeaderTolol from "@/app/components/Header";
 import FooterTolol from "@/app/components/Footer";
-import { config } from "@fortawesome/fontawesome-svg-core";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -36,9 +35,10 @@ export const metadata: Metadata = {
     locale: 'id_ID',
     type: 'website'
   },
+  icons: {
+    icon: '/favicon.svg',
+  }
 };
-
-config.autoAddCss = false;
 
 export default function RootLayout({
   children,
@@ -47,7 +47,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="id"
+      lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${inter.variable}`}
       data-scroll-behavior="smooth"
     >

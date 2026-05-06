@@ -3,11 +3,10 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faGoogle, faOpenai, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { List } from "lucide-react";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 interface List {
     id: number;
-    contact: IconProp;
+    contact: any;
     link: string;
     label: string;
     class?: string;
@@ -92,7 +91,7 @@ export default function Footer() {
             </div>
             <div className="flex jus-c-c align-itm-c">
                 <div className="pad-top-30px pad-btm-10px">
-                    <span id="footer-Lol" className="hover-after-effect color-p font-size-14px">Create by Author Tolol 2026?</span>
+                    <span id="footer-Lol" className="hover-after-effect color-p font-size-14px">Create by Author Tolol 2026</span>
                 </div>
             </div>
         </footer>

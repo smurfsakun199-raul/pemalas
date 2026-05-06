@@ -34,6 +34,8 @@
   --bg-dark-op-black: rgba(0, 0, 0, 0.3);
   --bg-white-light: #7373733b;
 
+  --bg-scrollbar-blue-black: #2437d1;
+
   --clr: white;
   --clr-white-op: rgba(255, 255, 255, 0.7);
   --clr-black-op: rgba(255, 255, 255, 0.7);
@@ -48,14 +50,37 @@
 
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-scrollbar-blue-black);
+  border-radius: 10px;
+  border: 3px solid var(--bg-red-old);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: transparent;
 }
 
 html {
   width: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--bg-scrollbar-blue-black) transparent;
 }
 
 body {
@@ -94,6 +119,8 @@ body.light {
   --bg-dark-light: black;
   --bg-dark-op-black: black;
   --bg-white-light: #ffffff;
+
+  --bg-scrollbar-blue-black: black;
 
   --clr: black;
   --clr-white-op: rgba(255, 255, 255, 0.7);
@@ -277,12 +304,13 @@ body.light {
 
   .sec-visible {
     content-visibility: visible;
-    contain-intrinsic-size: 0 500px;
+    contain-intrinsic-size: auto 500px;
   }
 
   .sec-visible-auto {
     content-visibility: auto;
-    contain-intrinsic-size: 0 500px;
+    contain-intrinsic-size: auto 500px;
+    contain-intrinsic-block-size: auto 500px;
   }
 
   /* --- Custom Style --- */
@@ -973,8 +1001,8 @@ body.light {
     transform: translateY(-4px);
   }
 
-  .transY-op0-100px {
-    transform: translateY(-100px);
+  .transY-op0-80px {
+    transform: translateY(-80px);
     opacity: 0;
     transition: 0.3s ease-in-out;
   }
@@ -993,6 +1021,28 @@ body.light {
   .rotate-180deg {
     transform: rotate(180deg);
     transition: 0.2s;
+  }
+
+  /* -- Transition -- */
+
+  .transition-op02-trans05-visibility08s-ease-in-out {
+    transition: opacity 0.2s ease-in-out,
+      transform 0.5s ease-in-out, visibility 0.8s ease-in-out;
+  }
+
+  .transition-op08-trans03-visibility08s-ease-in-out {
+    transition: opacity 0.8s ease-in-out,
+      transform 0.3s ease-in-out, visibility 0.8s ease-in-out;
+  }
+
+  /* -- Visibility -- */
+
+  .visibility-hide {
+    visibility: hidden;
+  }
+
+  .visibility-visible {
+    visibility: visible;
   }
 
   /* --- Icon --- */
@@ -1044,20 +1094,21 @@ body.light {
   }
 
   .icn-item-link-op {
-    transform: translateY(0);
+    transform: translateY(10px);
     opacity: 1;
     pointer-events: visible;
     backdrop-filter: blur(8px);
     z-index: 10;
-    transition: 0.3s ease-in-out;
+    transition: opacity 0.8s ease-in-out, transform 0.3s ease-in-out;
   }
 
   .icn-item_764-svg {
     opacity: 0;
-    transform: translateY(-100px);
-    transition: 0.3s ease-in-out;
+    transform: translateY(-80px);
+    transition: opacity 0.2s ease-in-out, transform 0.5s ease-in-out, visibility 0.8s ease-in-out;
     pointer-events: none;
     z-index: -1;
+    visibility: hidden;
   }
 
   .icn-item_764-svg a,
@@ -1077,8 +1128,8 @@ body.light {
     bottom: -2px;
     background: radial-gradient(circle at center, var(--bg-blue-old), transparent 120%);
     transform: translateX(50%);
-    will-change: transform;
-    transition: 0.3s ease-in-out;
+    will-change: width;
+    transition: width 0.3s ease-in-out;
   }
 
   .icn-item_764-svg a:hover,
@@ -1161,6 +1212,8 @@ body.light {
 
   /* --- Card & Effect --- */
 
+  /* -- Card -- */
+
   .card-small-10-20px {
     padding: 10px 20px;
     border: 1px solid var(--br-op);
@@ -1193,6 +1246,8 @@ body.light {
     border: 1px solid var(--br-op);
     border-radius: 12px;
   }
+
+  /* -- Effects -- */
 
   .horiz-effect-left {
     width: 100%;
@@ -1337,11 +1392,34 @@ body.light {
     width: 100%;
   }
 
+  .hover-after-effect-left-to-right {
+    position: relative;
+    transform: translateZ(0);
+    will-change: transform;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .hover-after-effect-left-to-right::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    bottom: -2px;
+    height: 2px;
+    left: 10%;
+    background: linear-gradient(to right, var(--bg-blue-old-after), transparent);
+    transition: width 0.3s ease-in-out;
+    will-change: width;
+  }
+
+  .hover-after-effect-left-to-right:hover:after {
+    width: 100%;
+  }
+
   /* --- Reveal --- */
 
   .reveal {
     opacity: 0;
-    transform: translateY(300px);
+    transform: translateY(50px);
     transition: transform 0.5s ease-in-out, opacity 1.5s ease-in-out;
   }
 
@@ -1387,15 +1465,15 @@ body.light {
   .grid-temp-clm-r4-to-r2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .grid-temp-clm-r5 {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 500px) {
   .flex-mx-500px-dir-clm {
     flex-direction: column;
-  }
-
-  .grid-temp-clm-r5 {
-    grid-template-columns: 1fr;
   }
 }
 
