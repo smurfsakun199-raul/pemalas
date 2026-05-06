@@ -3,11 +3,10 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faGoogle, faOpenai, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { List } from "lucide-react";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 interface List {
     id: number;
-    contact: IconProp;
+    contact: any;
     link: string;
     label: string;
     class?: string;

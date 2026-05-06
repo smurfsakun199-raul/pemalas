@@ -199,7 +199,7 @@ export default function HomePage() {
                     </div>
                     <div className="pos-rel grid grid-temp-clm-r3 jus-c-c align-itm-inherit gap-20px">
                         {listYear.map((item) => (
-                            <div key={item.id} className={`card-hover ${classBgCardId(item.id)}`}>
+                            <div key={item.id} className={`reveal card-hover ${classBgCardId(item.id)}`}>
                                 <div className="flex align-itm-c pad-btm-10px gap-10px">
                                     {item.title}
                                     <span className={`font-size-12px ${classColor(item.id)}`}>{item.name}</span>
@@ -227,7 +227,7 @@ export default function HomePage() {
                     </div>
                     <div className="grid grid-temp-clm-r2 jus-c-c align-itm-c gap-24px">
                         {listTools.map((itm) => (
-                            <div key={itm.id} className={`card-hover ${classBgCardId(itm.id)}`}>
+                            <div key={itm.id} className={`reveal card-hover ${classBgCardId(itm.id)}`}>
                                 <span className="font-size-18px">
                                     {itm.category}
                                 </span>
@@ -305,7 +305,7 @@ export default function HomePage() {
                         </div>
                         <div className="flex-mx-764px-dir-clm gap-20px">
                             {roadLol.map((item) => (
-                                <div key={item.id} className="card grid align-itm-inherit bg-dark-to-light">
+                                <div key={item.id} className="reveal card grid align-itm-inherit bg-dark-to-light">
                                     <div className="flex jus-c-sb align-itm-c pad-btm-10px gap-10px">
                                         <h3 className="font-size-14px color-white-op">{item.years}</h3>
                                         <span className="font-size-14px color-white-op">{item.month}</span>
@@ -343,7 +343,7 @@ export default function HomePage() {
                         </div>
                         <div className="grid grid-temp-clm-r4 jus-c-c gap-20px">
                             {skillsBacot.map((item) => (
-                                <div key={item.id} className={`card-hover ${classBgCardId(item.id)}`}>
+                                <div key={item.id} className={`reveal card-hover ${classBgCardId(item.id)}`}>
                                     <div className="flex jus-c-sb gap-20px pad-btm-20px">
                                         <h2 className="font-size-16px">{item.skill}</h2>
                                         <strong className="flex jus-c-c align-itm-c gap-10px font-size-14px"><Star className="width-18px height-18px" />{item.skr}</strong>

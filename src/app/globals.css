@@ -1,3 +1,5 @@
+/*@import "tailwindcss";*/
+
 :root {
   --psa: #6366f1,
     #a855f7,
@@ -334,7 +336,7 @@ body.light {
   }
 
   .color-blue {
-    box-shadow: 0px 0.6px 6px var(--bg-blue);
+    box-shadow: 0px 0.5px 6px var(--bg-blue);
   }
 
   /* -- Font -- */
@@ -1065,6 +1067,7 @@ body.light {
     bottom: -2px;
     background: radial-gradient(circle at center, var(--bg-blue-old), var(--bg) 120%);
     transform: translateX(50%);
+    will-change: transform;
     transition: 0.3s ease-in-out;
   }
 
@@ -1125,13 +1128,14 @@ body.light {
     bottom: -2px;
     background: radial-gradient(circle at center, var(--bg-blue-old), transparent 120%);
     transform: translateX(50%);
-    transition: 0.3s ease-in-out;
+    will-change: width;
+    transition: width 0.3s ease-in-out;
   }
 
   .icn-item_764-svg a:hover,
   .icn-item-link-op a:hover {
     box-shadow: 0px 0px 6px var(--bg-blue);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
   }
 
   .icn-item_764-svg a:hover::after,

@@ -52,12 +52,11 @@ const listContact = [
 ];
 
 export default function Header() {
-
     const [isLight, setIsLight] = useState('dark');
 
     useEffect(() => {
-        const getTheme = localStorage.getItem('theme') || 'dark';
-        setIsLight(getTheme);
+        const simpanTheme = localStorage.getItem('theme') || 'dark';
+        setIsLight(simpanTheme);
     }, []);
 
     useEffect(() => {
@@ -121,7 +120,11 @@ export default function Header() {
                             aria-label="Toggle Theme"
                             onClick={toggleTheme}
                             className="icn-svg-theme cursor-pnt bg-blur-card flex align-itm-fe bg-transparent br-radius-12px gap-4px">
-                            {isLight === 'light' ? <Sun /> : <Moon />}
+                            {isLight === 'light' ? (
+                                <Sun />
+                            ) : (
+                                <Moon />
+                            )}
                         </button>
                         <button
                             type="button"
